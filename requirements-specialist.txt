@@ -1,0 +1,14 @@
+# Install only in .venv-specialist; never merge into generative requirements.
+torch==2.13.0
+torchvision==0.28.0
+Pillow==12.3.0
+transformers==5.19.0
+sentence-transformers==6.1.0
+huggingface-hub==1.33.0
+tokenizers==0.23.2
+numpy==2.5.1
+PyYAML==6.0.3
+safetensors==0.8.0
+scikit-learn==1.9.1
+scipy==1.18.1
+pytest==9.1.1

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-specialist"
+version = "0.1.0"
+description = "Frozen embedding encoder and independently trained classifiers"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["torch==2.13.0", "torchvision==0.28.0", "Pillow==12.3.0", "transformers==5.19.0", "sentence-transformers==6.1.0", "huggingface-hub==1.33.0", "tokenizers==0.23.2", "numpy==2.5.1", "PyYAML==6.0.3", "safetensors==0.8.0", "scikit-learn==1.9.1", "scipy==1.18.1"]
+
+[project.optional-dependencies]
+test = ["pytest>=9,<10"]
+
+[project.scripts]
+"llm-specialist-specialist" = "llm_specialist.cli.specialist:main"
+"llm-specialist-memory-worker" = "llm_specialist.cli.memory_worker:main"
+"llm-specialist-probe-embedding-states" = "llm_specialist.cli.probe_embedding_states:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["llm_specialist*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
